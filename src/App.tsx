@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { Provider as ReduxProvider } from 'react-redux';
+import { store } from './store';
+import './services/firebase';
 
-function App() {
+import { GetStarted } from './pages/GetStarted';
+import { SignIn } from './pages/SignIn';
+import { Home } from './pages/Home';
+import { Profile } from './pages/Profile';
+import { AllPlayers } from './pages/AllPlayers';
+
+import { PrivateRoute } from './routes/PrivateRoute';
+
+import { LightTheme } from './global/themes/light';
+import GlobalStyle from './global/styles/global';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ReduxProvider store={store}>
+        <ThemeProvider theme={LightTheme}>
+          <GlobalStyle />
+          <Route path='/' exact component={GetStarted} />
+          <Route path='/sign-in' exact component={SignIn} />
+          <PrivateRoute path='/dashboard' exact component={Home} />
+          <PrivateRoute path='/profile' exact component={Profile} />
+          <PrivateRoute path='/allplayers' exact component={AllPlayers} />
+        </ThemeProvider>
+      </ReduxProvider>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
