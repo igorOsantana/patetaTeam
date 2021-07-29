@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.body`
+export const Container = styled.main`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -16,7 +16,7 @@ export const Body = styled.main`
   width: 100%;
   text-align: center;
   font-weight: bold;
-  padding: 1rem 3rem;
+  padding: 3rem;
 `;
 
 export const Footer = styled.footer`
@@ -29,4 +29,8 @@ export const Footer = styled.footer`
   color: ${({ theme: { colors } }) => colors.white};
   font-size: 14px;
   padding: 0 3rem;
+
+  @media (max-width: 540px) {
+    font-size: 10px;
+  }
 `;

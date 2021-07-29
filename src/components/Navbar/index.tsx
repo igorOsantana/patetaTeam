@@ -1,62 +1,67 @@
-import { Container, Nav } from './styles';
+import { useEffect, useState } from 'react';
+import { removeToken } from '../../services/auth';
+import { useAppDispatch } from '../../hooks';
+import { useHistory } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import { logOut } from '../../store/slices/authSlice';
 
 import backgroundGetStarted from '../../assets/images/logo_patetada.png';
-import { useAppDispatch } from '../../hooks';
-import { logOut } from '../../store/slices/authSlice';
-import { useHistory } from 'react-router';
-import { useEffect } from 'react';
+import { Container, Nav, NavToggle } from './styles';
 
 export const Navbar: React.FC = () => {
+  const [showNavToggle, setShowNavToggle] = useState(false);
+
   const {
-    push,
     location: { pathname },
   } = useHistory();
   const dispatch = useAppDispatch();
 
-  const handleDashboard = () => push('/dashboard');
+  const handleToggle = () => setShowNavToggle(prevState => !prevState);
 
-  const handleMyProfile = () => push('/profile');
+  const handleCloseMenu = () => setShowNavToggle(false);
 
-  const handleAllPlayers = () => push('/allplayers');
-
-  const handleLogOut = () => dispatch(logOut());
+  const handleLogOut = () => {
+    removeToken();
+    dispatch(logOut());
+  };
 
   useEffect(() => {
-    const currentUrl = pathname.replace('/', '');
-    const regex = new RegExp(`${currentUrl}`, 'gmi');
-    const removeWhiteSpace = /\s/g;
-    const liElementList = document.querySelectorAll('[data-js="navbar"]');
-
-    liElementList.forEach(li => {
-      if (li.textContent?.replace(removeWhiteSpace, '').match(regex))
-        li.classList.add('selected');
-      else li.classList.remove('selected');
-    });
-  }, [pathname]);
+    if (showNavToggle) document.body.style.overflowY = 'hidden';
+    else document.body.style.overflowY = 'auto';
+  }, [pathname, showNavToggle]);
 
   return (
-    <Container>
-      <Nav>
+    <Container onShowMenu={showNavToggle}>
+      <div>
+        <NavLink to='/dashboard'>
+          <img src={backgroundGetStarted} alt="team's logo brand" />
+        </NavLink>
+      </div>
+      <Nav onShowMenu={showNavToggle}>
         <ul>
-          <li onClick={handleDashboard}>
-            <img
-              src={backgroundGetStarted}
-              alt="team's logo brand"
-              width={60}
-            />
+          <li onClick={handleCloseMenu}>
+            <NavLink to='/dashboard' activeClassName='selected'>
+              Dashboard
+            </NavLink>
           </li>
-          <li data-js='navbar' onClick={handleDashboard}>
-            Dashboard
+          <li onClick={handleCloseMenu}>
+            <NavLink to='/profile' activeClassName='selected'>
+              My Profile
+            </NavLink>
           </li>
-          <li data-js='navbar' onClick={handleMyProfile}>
-            My Profile
-          </li>
-          <li data-js='navbar' onClick={handleAllPlayers}>
-            All Players
+          <li onClick={handleCloseMenu}>
+            <NavLink to='/allplayers' activeClassName='selected'>
+              All Players
+            </NavLink>
           </li>
           <li onClick={handleLogOut}>Log Out</li>
         </ul>
       </Nav>
+      <NavToggle onShowMenu={showNavToggle} onClick={handleToggle}>
+        <div className='one' />
+        <div className='two' />
+        <div className='three' />
+      </NavToggle>
     </Container>
   );
 };

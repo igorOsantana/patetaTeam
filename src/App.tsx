@@ -6,7 +6,7 @@ import './services/firebase';
 
 import { GetStarted } from './pages/GetStarted';
 import { SignIn } from './pages/SignIn';
-import { Home } from './pages/Home';
+import { Dashboard } from './pages/Dashboard';
 import { Profile } from './pages/Profile';
 import { AllPlayers } from './pages/AllPlayers';
 
@@ -23,7 +23,7 @@ const App: React.FC = () => {
           <GlobalStyle />
           <Route path='/' exact component={GetStarted} />
           <Route path='/sign-in' exact component={SignIn} />
-          <PrivateRoute path='/dashboard' exact component={Home} />
+          <PrivateRoute path='/dashboard' component={Dashboard} />
           <PrivateRoute path='/profile' exact component={Profile} />
           <PrivateRoute path='/allplayers' exact component={AllPlayers} />
         </ThemeProvider>

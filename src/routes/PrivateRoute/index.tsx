@@ -4,7 +4,7 @@ import { useAppSelector } from '../../hooks';
 type PrivateRouteProps = {
   component: React.FC;
   path: string;
-  exact: boolean;
+  exact?: boolean;
 };
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = props => {

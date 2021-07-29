@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppDispatch } from '..';
+import { isAuthenticated, setToken } from '../../services/auth';
 
 type SignInProps = {
   email: string;
@@ -7,7 +8,7 @@ type SignInProps = {
 };
 
 const initialState = {
-  isLogged: false,
+  isLogged: isAuthenticated(),
   isLoading: false,
   msgError: '',
 };
@@ -61,11 +62,16 @@ export const authPlayer = ({ email, password }: SignInProps) => {
       }
     );
 
-    if (response.status === 200 && response.ok) dispatch(logIn());
-    else if (response.status !== 200 && response.ok === false) {
+    const data = await response.json();
+
+    if (response.status === 200 && response.ok) {
+      const { refreshToken } = data;
+      setToken(refreshToken);
+      dispatch(logIn());
+    } else if (response.status !== 200 && response.ok === false) {
       const {
         error: { message },
-      } = await response.json();
+      } = data;
       switch (message) {
         case 'EMAIL_NOT_FOUND':
           dispatch(setMsgError('Wrong email or password'));
