@@ -4,6 +4,7 @@ import { fadeInLeft } from '../../global/styles/global';
 
 export const Container = styled.div`
   height: 8rem;
+  width: 30rem;
   border-radius: 5px;
   border-bottom: 3px solid ${({ theme: { colors } }) => colors.main};
   padding: 1rem 2rem;
@@ -41,6 +42,7 @@ export const Content = styled.div`
     margin-top: 5px;
     margin-left: 25px;
     font-size: 3rem;
+    white-space: nowrap;
 
     @media (max-width: 400px) {
       display: none;

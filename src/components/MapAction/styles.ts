@@ -9,10 +9,11 @@ type MapActionProps = {
 
 export const Container = styled.div<MapActionProps>`
   height: 8rem;
+  width: 25rem;
   border-radius: 5px;
   border-bottom: 3px solid ${({ borderColor }) => borderColor};
   padding: 1rem 2rem;
-  margin-bottom: 1.5rem;
+  margin: 1rem;
   font-size: 1.75rem;
   color: ${({ theme: { colors } }) => colors.white};
   background-color: ${({ color }) => color};
@@ -47,6 +48,7 @@ export const Content = styled.div`
     margin-top: 5px;
     margin-left: 25px;
     font-size: 3rem;
+    white-space: nowrap;
 
     @media (max-width: 400px) {
       display: none;

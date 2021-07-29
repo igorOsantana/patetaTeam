@@ -17,6 +17,13 @@ export const Body = styled.main`
   text-align: center;
   font-weight: bold;
   padding: 3rem;
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Footer = styled.footer`
