@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import logo from '../../assets/images/logo_patetada.png';
+import { shake } from '../../global/styles/global';
 
 export const Container = styled.main`
   width: 100vw;
@@ -134,4 +135,5 @@ export const Error = styled.p`
   text-align: right;
   margin-top: 1rem;
   margin-left: auto;
+  animation: ${shake} 0.3s;
 `;

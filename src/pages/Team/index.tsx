@@ -1,7 +1,7 @@
 import { Layout } from '../../components/Layout';
 import { Container } from './styles';
 
-export const AllPlayers: React.FC = () => {
+export const Team: React.FC = () => {
   return (
     <Layout>
       <Container>

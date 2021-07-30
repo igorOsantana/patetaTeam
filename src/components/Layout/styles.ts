@@ -5,10 +5,6 @@ export const Container = styled.main`
   height: 100vh;
   display: flex;
   flex-direction: column;
-
-  header {
-    flex: 1;
-  }
 `;
 
 export const Body = styled.main`
@@ -16,7 +12,7 @@ export const Body = styled.main`
   width: 100%;
   text-align: center;
   font-weight: bold;
-  padding: 3rem;
+  padding: 1.5rem 3rem;
 
   > div {
     display: flex;

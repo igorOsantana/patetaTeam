@@ -4,9 +4,10 @@ import { useAppDispatch } from '../../hooks';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { logOut } from '../../store/slices/authSlice';
+import { ExitToApp, Dashboard, AccountBox, People } from '@material-ui/icons';
 
 import backgroundGetStarted from '../../assets/images/logo_patetada.png';
-import { Container, Nav, NavToggle } from './styles';
+import { Container, Nav, NavToggle, ButtonLogOut } from './styles';
 
 export const Navbar: React.FC = () => {
   const [showNavToggle, setShowNavToggle] = useState(false);
@@ -41,20 +42,28 @@ export const Navbar: React.FC = () => {
         <ul>
           <li onClick={handleCloseMenu}>
             <NavLink to='/dashboard' activeClassName='selected'>
+              <Dashboard />
               Dashboard
             </NavLink>
           </li>
           <li onClick={handleCloseMenu}>
-            <NavLink to='/profile' activeClassName='selected'>
-              My Profile
+            <NavLink to='/team' activeClassName='selected'>
+              <People />
+              Team
             </NavLink>
           </li>
           <li onClick={handleCloseMenu}>
-            <NavLink to='/allplayers' activeClassName='selected'>
-              All Players
+            <NavLink to='/profile' activeClassName='selected'>
+              <AccountBox />
+              Profile
             </NavLink>
           </li>
-          <li onClick={handleLogOut}>Log Out</li>
+          <li onClick={handleLogOut}>
+            <p>
+              Log Out
+              <ExitToApp />
+            </p>
+          </li>
         </ul>
       </Nav>
       <NavToggle onShowMenu={showNavToggle} onClick={handleToggle}>

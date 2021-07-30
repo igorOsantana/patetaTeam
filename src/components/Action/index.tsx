@@ -1,7 +1,6 @@
 import { useHistory } from 'react-router';
 import { Container, Content } from './styles';
-
-import tactical_simbol from '../../assets/images/tatic_simbol.png';
+import { SpeakerNotes } from '@material-ui/icons';
 
 type ActionProps = {
   title: string;
@@ -11,12 +10,12 @@ type ActionProps = {
 export const Action: React.FC<ActionProps> = ({ title }) => {
   const history = useHistory();
 
-  const handleActionClick = () => history.push('/dashboard/map-action');
+  const handleActionClick = () => history.push('/dashboard/tactical/maps');
 
   return (
     <Container onClick={handleActionClick}>
       <Content>
-        <img src={tactical_simbol} alt='tactical simbol' />
+        <SpeakerNotes />
         <p>{title}</p>
       </Content>
     </Container>

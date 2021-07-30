@@ -24,20 +24,44 @@ export const fadeInRight = keyframes`
   100%{ opacity: 1; transform: translateX(0vw); filter: blur(0px) }
 `;
 
+export const fadeInUp = keyframes`
+  0%{ opacity: 0; transform: translateY(-10vw); filter: blur(10px) }
+  25%{ opacity: 0.3; transform: translateY(-7vw); filter: blur(8px) }
+  50%{ opacity: 0.5; transform: translateY(-5vw); filter: blur(4px) }
+  75%{ opacity: 0.8; transform: translateY(-2vw); filter: blur(2px) }
+  100%{ opacity: 1; transform: translateY(0vw); filter: blur(0px) }
+`;
+
+export const fadeInDown = keyframes`
+  0%{ opacity: 0; transform: translateY(10vw); filter: blur(10px) }
+  25%{ opacity: 0.3; transform: translateY(7vw); filter: blur(8px) }
+  50%{ opacity: 0.5; transform: translateY(5vw); filter: blur(4px) }
+  75%{ opacity: 0.8; transform: translateY(2vw); filter: blur(2px) }
+  100%{ opacity: 1; transform: translateY(0vw); filter: blur(0px) }
+`;
+
+export const shake = keyframes`
+  0%{ transform: translateX(-10px); }
+  25%{ transform: translateX(10px); }
+  50%{ transform: translateX(-10px); }
+  75%{ transform: translateX(10px); }
+  100%{ transform: translateX(0px); }
+`;
+
 export default createGlobalStyle`
   @media(max-width: 1024px) {
     html {
       font-size: 93.75%;
     }
   }
-  @media(max-width: 768px) {
+  @media(max-width: 784px) {
     html {
-      font-size: 74%;
+      font-size: 67.75%;
     }
   }
   @media(max-width: 480px) {
     html {
-      font-size: 67.75%;
+      font-size: 60.25%;
     }
   }
   * {

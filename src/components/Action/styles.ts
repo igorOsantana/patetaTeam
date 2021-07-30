@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 8rem;
   width: 30rem;
   border-radius: 5px;
-  border-bottom: 3px solid ${({ theme: { colors } }) => colors.main};
+  border-bottom: 3px solid ${({ theme: { colors } }) => colors.secondary};
   padding: 1rem 2rem;
   font-size: 1.75rem;
   color: ${({ theme: { colors } }) => colors.black};
@@ -34,8 +34,8 @@ export const Content = styled.div`
     justify-content: center;
   }
 
-  img {
-    width: 4rem;
+  svg {
+    font-size: 4rem;
   }
 
   p {
