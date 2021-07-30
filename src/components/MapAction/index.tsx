@@ -40,6 +40,10 @@ const colorsBorderMaps = {
 
 export const MapAction: React.FC<MapActionProps> = ({ map }) => {
   const history = useHistory();
+  const currentMap = history.location.pathname.replace(
+    '/dashboard/tactical/maps/',
+    ''
+  );
 
   const handleClickMap = () => history.push(`/dashboard/tactical/maps/${map}`);
 
@@ -48,6 +52,7 @@ export const MapAction: React.FC<MapActionProps> = ({ map }) => {
       onClick={handleClickMap}
       color={colorsMaps[map]}
       borderColor={colorsBorderMaps[map]}
+      selected={map === currentMap}
     >
       <Content>
         <img src={imageMaps[map]} alt={`${maps[map]} simbol map`} />

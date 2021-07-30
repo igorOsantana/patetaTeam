@@ -31,7 +31,7 @@ export const Footer = styled.footer`
   font-weight: bold;
   color: ${({ theme: { colors } }) => colors.white};
   font-size: 14px;
-  padding: 0 3rem;
+  padding: 1rem 3rem;
 
   @media (max-width: 540px) {
     font-size: 10px;

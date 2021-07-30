@@ -21,7 +21,7 @@ const menuMobileUlContent = css`
   font-size: 2.5rem;
   position: absolute;
   left: 47%;
-  top: 15%;
+  top: 10%;
   transform: translateX(-50%);
   animation: ${fadeIn} 0.5s;
 `;

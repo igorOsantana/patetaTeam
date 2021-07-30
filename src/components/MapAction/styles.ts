@@ -3,6 +3,7 @@ import styled from 'styled-components';
 type MapActionProps = {
   color: string;
   borderColor: string;
+  selected: boolean;
 };
 
 export const Container = styled.div<MapActionProps>`
@@ -17,6 +18,7 @@ export const Container = styled.div<MapActionProps>`
   background-color: ${({ color }) => color};
   cursor: pointer;
   transition: all 0.3s;
+  transform: scale(${({ selected }) => (selected ? 1.1 : 1)});
 
   @media (max-width: 700px) {
     margin: 0.5rem 0.75rem;
