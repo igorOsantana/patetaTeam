@@ -81,15 +81,19 @@ export const Positions: React.FC = () => {
           <tr>
             <th>*</th>
             <th>
-              <img src={CT} alt='ct simbol' />
+              <CTSide>
+                <img src={CT} alt='ct simbol' />
+              </CTSide>
             </th>
             <th>
-              <img src={TR} alt='t simbol' />
+              <TRSide>
+                <img src={TR} alt='t simbol' />
+              </TRSide>
             </th>
           </tr>
         </thead>
         <tbody>
-          {PLAYERS.map(player => (
+          {PLAYERS.map((player) => (
             <tr key={player.id}>
               <td>
                 <Player image={player.img} />
@@ -100,13 +104,6 @@ export const Positions: React.FC = () => {
           ))}
         </tbody>
       </table>
-      <TRSide>
-        <Player image={player_3} />
-      </TRSide>
-      <CTSide>
-        <Player image={player_2} />
-        <Player image={player_5} />
-      </CTSide>
     </Container>
   );
 };

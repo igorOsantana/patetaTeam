@@ -11,15 +11,9 @@ export const CTSide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 
-  > img {
-    width: max(20%, 3rem);
-    margin-bottom: 2rem;
-  }
-
-  > div {
-    margin: 0.5rem auto;
+  img {
+    width: 4rem;
   }
 `;
 
@@ -28,13 +22,8 @@ export const TRSide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 
   img {
-    width: max(20%, 3rem);
-    margin-bottom: 2rem;
-  }
-  > div {
-    margin: 0.5rem auto;
+    width: 4rem;
   }
 `;
