@@ -1,6 +1,6 @@
 import { useParams } from 'react-router';
 import { ParamsRoute } from '../../App';
-import { Calls } from '../../components/Calls';
+import { ContainerCalls } from '../../components/ContainerCalls';
 import { imageMaps } from '../../components/MapAction';
 import { Positions } from '../../components/Positions';
 import { NotFound } from '../NotFound';
@@ -15,7 +15,7 @@ export const TacticalMap: React.FC = () => {
         <NotFound page={mapName} title='map' privateRoute />
       ) : (
         <Container>
-          <Calls map_image={imageMaps[mapName]} map_name={mapName} />
+          <ContainerCalls map_image={imageMaps[mapName]} map_name={mapName} />
         </Container>
       )}
     </>

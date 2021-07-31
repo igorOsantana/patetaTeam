@@ -4,7 +4,6 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   margin: 1rem;
-  background-color: red;
 `;
 
 export const CTSide = styled.div`
@@ -14,8 +13,13 @@ export const CTSide = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  img {
-    width: 4.5rem;
+  > img {
+    width: max(20%, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  > div {
+    margin: 0.5rem auto;
   }
 `;
 
@@ -27,6 +31,10 @@ export const TRSide = styled.div`
   flex-direction: column;
 
   img {
-    width: 4.5rem;
+    width: max(20%, 3rem);
+    margin-bottom: 2rem;
+  }
+  > div {
+    margin: 0.5rem auto;
   }
 `;

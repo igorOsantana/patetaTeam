@@ -9,15 +9,18 @@ export const Container = styled.main`
 
 export const Body = styled.main`
   flex: 8;
-  width: 100%;
   text-align: center;
   font-weight: bold;
   padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: center;
 
   > div {
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
   }
 `;

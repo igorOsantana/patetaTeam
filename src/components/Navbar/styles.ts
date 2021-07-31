@@ -14,14 +14,13 @@ const menuMobileContainer = css`
   z-index: 10;
   align-items: flex-start;
   background-color: ${({ theme: { colors } }) => colors.bgColor};
-  border: 2px solid ${({ theme: { colors } }) => colors.secondary};
 `;
 
 const menuMobileUlContent = css`
   font-size: 2.5rem;
   position: absolute;
-  left: 47%;
-  top: 10%;
+  left: 50%;
+  top: 15%;
   transform: translateX(-50%);
   animation: ${fadeIn} 0.5s;
 `;
@@ -153,12 +152,12 @@ export const Nav = styled.nav<NavbarProps>`
 
 export const NavToggle = styled.div<NavbarProps>`
   width: 50px;
-  height: 40px;
+  height: 50px;
   cursor: pointer;
   display: none;
 
   @media (max-width: 700px) {
-    ${({ onShowMenu }) => (onShowMenu ? `margin-top: 1.85rem;` : null)}
+    ${({ onShowMenu }) => (onShowMenu ? `margin-top: 2rem;` : null)}
     display: block;
   }
 
