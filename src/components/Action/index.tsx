@@ -10,7 +10,8 @@ type ActionProps = {
 export const Action: React.FC<ActionProps> = ({ title }) => {
   const history = useHistory();
 
-  const handleActionClick = () => history.push('/dashboard/tactical/maps');
+  const handleActionClick = () =>
+    history.push('/dashboard/tactical/maps/dust2');
 
   return (
     <Container onClick={handleActionClick}>

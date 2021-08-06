@@ -10,17 +10,16 @@ export const Container = styled.div<CallStyleProps>`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  width: max(250px, 80vw);
+  width: max(250px, 95%);
   margin: 0.5rem;
   padding: 2rem;
   border-radius: 5px;
   background-color: ${({ theme: { colors } }) => colors.black};
   cursor: pointer;
-  transition: all 0.3s;
   color: ${({ theme: { colors } }) => colors.secondary};
+  transition: all 0.25s;
 
   &:hover {
-    filter: brightness(115%);
     color: ${({ theme: { colors } }) => colors.main};
   }
 `;
@@ -49,5 +48,6 @@ export const HiddenContainer = styled.div`
   flex-direction: column;
   width: 95%;
   margin: 2rem auto;
+  color: ${({ theme: { colors } }) => colors.white};
   animation: ${fadeIn} 0.2s;
 `;

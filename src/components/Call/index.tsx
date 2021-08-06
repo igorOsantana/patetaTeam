@@ -22,7 +22,7 @@ export const Call: React.FC<CallProps> = ({ title }) => {
       </Title>
       {showCall && (
         <HiddenContainer>
-          <Positions />
+          <h1>HIDED CONTAINER</h1>
         </HiddenContainer>
       )}
     </Container>

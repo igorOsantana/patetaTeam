@@ -1,5 +1,14 @@
-import { Container, TRSide, CTSide } from './styles';
+import {
+  Container,
+  Title,
+  CsgoSimbol,
+  SimbolSide,
+  TRSide,
+  CTSide,
+  ImgPlayer,
+} from './styles';
 
+import csgo_simbol from '../../assets/images/csgo_simbol.png';
 import CT from '../../assets/images/CTSide.png';
 import TR from '../../assets/images/TRSide.png';
 import player_1 from '../../assets/images/player_1.jpg';
@@ -9,10 +18,11 @@ import player_4 from '../../assets/images/player_4.jpg';
 import player_5 from '../../assets/images/player_5.jpg';
 
 import { Player } from '../Player';
+import { MapActionProps } from '../MapAction';
 
-const PLAYERS = [
+const PLAYERS: PlayerProps[] = [
   {
-    id: 1,
+    id: '1',
     name: 'Igor Santana',
     nickname: 'Bourdog',
     img: player_1,
@@ -20,11 +30,12 @@ const PLAYERS = [
       maps: {
         dust2: { ct: 'mid', t: 'lurker' },
         mirage: { ct: 'short', t: 'support' },
+        overpass: { ct: 'short A', t: 'support' },
       },
     },
   },
   {
-    id: 2,
+    id: '2',
     name: 'Gustavo Souza',
     nickname: 'Gustagol',
     img: player_2,
@@ -32,23 +43,25 @@ const PLAYERS = [
       maps: {
         dust2: { ct: 'joker', t: '2° entry' },
         mirage: { ct: 'mid', t: 'lurker' },
+        overpass: { ct: 'Joker', t: 'lurker' },
       },
     },
   },
   {
-    id: 3,
+    id: '3',
     name: 'Diego Manfio',
     nickname: 'DieGod',
     img: player_3,
     positions: {
       maps: {
         dust2: { ct: 'short', t: 'awper' },
-        mirage: { ct: 'connection', t: 'awper/support' },
+        mirage: { ct: 'connector', t: 'awper/support' },
+        overpass: { ct: 'Monster', t: 'awper/support' },
       },
     },
   },
   {
-    id: 4,
+    id: '4',
     name: 'Igor Delgado',
     nickname: 'Xhan',
     img: player_4,
@@ -56,11 +69,12 @@ const PLAYERS = [
       maps: {
         dust2: { ct: 'bomb B solo', t: '2° entry' },
         mirage: { ct: 'bomb B solo', t: '2° entry' },
+        overpass: { ct: 'bomb A solo', t: '2° entry' },
       },
     },
   },
   {
-    id: 5,
+    id: '5',
     name: 'Gabriel Tomilhero',
     nickname: 'Gazera',
     img: player_5,
@@ -68,23 +82,55 @@ const PLAYERS = [
       maps: {
         dust2: { ct: 'long fixed', t: '1° entry' },
         mirage: { ct: 'bomb A fixed', t: '1° entry' },
+        overpass: { ct: 'bomb B fixed', t: '1° entry' },
       },
     },
   },
 ];
 
-export const Positions: React.FC = () => {
+type PlayerProps = {
+  id: string;
+  name: string;
+  nickname: string;
+  img: string;
+  positions: {
+    maps: {
+      dust2: { ct: string; t: string };
+      mirage: { ct: string; t: string };
+      overpass: { ct: string; t: string };
+    };
+  };
+  [index: string]: any;
+};
+
+type PositionsProps = MapActionProps & {
+  map_image: string;
+};
+
+export const Positions: React.FC<PositionsProps> = ({ map, map_image }) => {
   return (
     <Container>
+      <Title>
+        <h1>Positions</h1>
+        <img src={map_image} alt={`${map} simbol map`} />
+      </Title>
       <table>
         <thead>
           <tr>
-            <th>*</th>
             <th>
-              <img src={CT} alt='ct simbol' />
+              <CsgoSimbol>
+                <img src={csgo_simbol} alt='csgo simbol' />
+              </CsgoSimbol>
             </th>
             <th>
-              <img src={TR} alt='t simbol' />
+              <SimbolSide>
+                <img src={TR} alt='t simbol' />
+              </SimbolSide>
+            </th>
+            <th>
+              <SimbolSide>
+                <img src={CT} alt='ct simbol' />
+              </SimbolSide>
             </th>
           </tr>
         </thead>
@@ -92,21 +138,20 @@ export const Positions: React.FC = () => {
           {PLAYERS.map(player => (
             <tr key={player.id}>
               <td>
-                <Player image={player.img} />
+                <ImgPlayer>
+                  <Player image={player.img} />
+                </ImgPlayer>
               </td>
-              <td>{player.positions.maps.dust2.ct}</td>
-              <td>{player.positions.maps.dust2.t}</td>
+              <td>
+                <TRSide>{player.positions.maps[map].t}</TRSide>
+              </td>
+              <td>
+                <CTSide>{player.positions.maps[map].ct}</CTSide>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <TRSide>
-        <Player image={player_3} />
-      </TRSide>
-      <CTSide>
-        <Player image={player_2} />
-        <Player image={player_5} />
-      </CTSide>
     </Container>
   );
 };

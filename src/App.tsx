@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { MapActionProps } from './components/MapAction';
 import { ThemeProvider } from 'styled-components';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from './store';
@@ -15,9 +16,7 @@ import { PrivateRoute } from './routes/PrivateRoute';
 import { LightTheme } from './global/themes/light';
 import GlobalStyle from './global/styles/global';
 
-export type ParamsRoute = {
-  map: string;
-};
+export type ParamsRoute = MapActionProps;
 
 const App: React.FC = () => {
   return (

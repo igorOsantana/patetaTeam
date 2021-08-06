@@ -5,9 +5,9 @@ import mapMirage from '../../assets/images/map_mirage.png';
 import mapDust2 from '../../assets/images/map_dust2.png';
 import mapOverpass from '../../assets/images/map_overpass.png';
 
-type MapActionProps = {
+export type MapActionProps = {
   map: 'mirage' | 'dust2' | 'overpass';
-  [key: string]: string;
+  [key: string]: any;
 };
 
 type ImageMapProps = {

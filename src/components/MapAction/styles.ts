@@ -18,7 +18,8 @@ export const Container = styled.div<MapActionProps>`
   background-color: ${({ color }) => color};
   cursor: pointer;
   transition: all 0.3s;
-  transform: scale(${({ selected }) => (selected ? 1.1 : 1)});
+  transform: scale(${({ selected }) => (selected ? 1.15 : 1)});
+  opacity: ${({ selected }) => (selected ? 1 : 0.5)};
 
   @media (max-width: 700px) {
     margin: 0.5rem 0.75rem;

@@ -4,7 +4,7 @@ import { fadeInLeft } from '../../global/styles/global';
 
 export const Container = styled.div`
   height: 8rem;
-  max-width: 30rem;
+  max-width: 35rem;
   border-radius: 5px;
   border-bottom: 3px solid ${({ theme: { colors } }) => colors.secondary};
   padding: 1rem 2rem;
