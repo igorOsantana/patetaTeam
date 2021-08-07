@@ -5,8 +5,25 @@ import { Positions } from '../Positions';
 
 import { Container, Title, HiddenContainer } from './styles';
 
+type PlayerActionCallProps = {
+  shouldDo: string;
+  grenades: { he: number; flashbang: number; motolov: number; smoke: number };
+};
+
 type CallProps = {
+  id: number;
+  map: string;
   title: string;
+  call: {
+    description: string;
+    players: {
+      1: PlayerActionCallProps;
+      2: PlayerActionCallProps;
+      3: PlayerActionCallProps;
+      4: PlayerActionCallProps;
+      5: PlayerActionCallProps;
+    };
+  };
 };
 
 export const Call: React.FC<CallProps> = ({ title }) => {
