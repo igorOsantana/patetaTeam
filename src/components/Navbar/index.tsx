@@ -7,7 +7,7 @@ import { logOut } from '../../store/slices/authSlice';
 import { ExitToApp, Dashboard, AccountBox, People } from '@material-ui/icons';
 
 import backgroundGetStarted from '../../assets/images/logo_patetada.png';
-import { Container, Nav, NavToggle, ButtonLogOut } from './styles';
+import { Container, Nav, NavToggle } from './styles';
 
 export const Navbar: React.FC = () => {
   const [showNavToggle, setShowNavToggle] = useState(false);

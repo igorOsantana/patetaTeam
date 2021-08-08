@@ -8,6 +8,14 @@ export const fadeIn = keyframes`
   100%{ opacity: 1; filter: blur(0px) }
 `;
 
+export const fadeOut = keyframes`
+  0%{ opacity: 0; filter: blur(0px) }
+  25%{ opacity: 0.3; filter: blur(2px) }
+  50%{ opacity: 0.5; filter: blur(4px) }
+  75%{ opacity: 0.8; filter: blur(8px) }
+  100%{ opacity: 1; filter: blur(10px) }
+`;
+
 export const fadeInLeft = keyframes`
   0%{ opacity: 0; transform: translateX(-10vw); filter: blur(10px) }
   25%{ opacity: 0.3; transform: translateX(-7vw); filter: blur(8px) }

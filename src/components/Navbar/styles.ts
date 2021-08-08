@@ -35,8 +35,7 @@ export const Container = styled.header<NavbarProps>`
 
   @media (max-width: 700px) {
     justify-content: space-between;
-    ${({ onShowMenu, theme: { colors } }) =>
-      onShowMenu ? menuMobileContainer : null}
+    ${({ onShowMenu }) => (onShowMenu ? menuMobileContainer : null)}
   }
 
   > div {

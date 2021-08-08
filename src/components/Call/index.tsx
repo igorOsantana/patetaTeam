@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { ArrowForwardIos } from '@material-ui/icons';
+import { PLAYERS } from '../Positions';
+import { CSSTransition } from 'react-transition-group';
 
-import { Positions } from '../Positions';
+import { Player } from '../Player';
 
-import { Container, Title, HiddenContainer } from './styles';
+import {
+  Container,
+  Title,
+  HiddenContainer,
+  Description,
+  PlayerContent,
+} from './styles';
 
 type PlayerActionCallProps = {
   shouldDo: string;
@@ -22,26 +30,51 @@ type CallProps = {
       3: PlayerActionCallProps;
       4: PlayerActionCallProps;
       5: PlayerActionCallProps;
+      [index: number]: any;
     };
   };
 };
 
-export const Call: React.FC<CallProps> = ({ title }) => {
+export const Call: React.FC<CallProps> = ({
+  title,
+  call: { description, players },
+}) => {
   const [showCall, setShowCall] = useState(false);
+  const [heightCall, setHeightCall] = useState(0);
 
   const handleToggleCall = () => setShowCall(prevState => !prevState);
 
+  const handleHeight = (element: HTMLElement) => {
+    const height = element.offsetHeight;
+    setHeightCall(height);
+  };
+
   return (
-    <Container onClick={handleToggleCall}>
-      <Title isVisible={showCall}>
+    <Container>
+      <Title onClick={handleToggleCall} isVisible={showCall}>
         <h1>{title}</h1>
         <ArrowForwardIos />
       </Title>
-      {showCall && (
+      <CSSTransition
+        in={showCall}
+        unmountOnExit
+        timeout={500}
+        classNames='showCall'
+        onEnter={handleHeight}
+      >
         <HiddenContainer>
-          <h1>HIDED CONTAINER</h1>
+          <Description>
+            <span>Description</span>
+            <p>{description}</p>
+          </Description>
+          {PLAYERS.map(PLAYER => (
+            <PlayerContent key={PLAYER.id}>
+              <Player colorSecondary image={PLAYER.img} />
+              <p>{players[PLAYER.id].shouldDo}</p>
+            </PlayerContent>
+          ))}
         </HiddenContainer>
-      )}
+      </CSSTransition>
     </Container>
   );
 };

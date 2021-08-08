@@ -20,9 +20,9 @@ import player_5 from '../../assets/images/player_5.jpg';
 import { Player } from '../Player';
 import { MapActionProps } from '../MapAction';
 
-const PLAYERS: PlayerProps[] = [
+export const PLAYERS: PlayerProps[] = [
   {
-    id: '1',
+    id: 1,
     name: 'Igor Santana',
     nickname: 'Bourdog',
     img: player_1,
@@ -35,7 +35,7 @@ const PLAYERS: PlayerProps[] = [
     },
   },
   {
-    id: '2',
+    id: 2,
     name: 'Gustavo Souza',
     nickname: 'Gustagol',
     img: player_2,
@@ -48,7 +48,7 @@ const PLAYERS: PlayerProps[] = [
     },
   },
   {
-    id: '3',
+    id: 3,
     name: 'Diego Manfio',
     nickname: 'DieGod',
     img: player_3,
@@ -61,7 +61,7 @@ const PLAYERS: PlayerProps[] = [
     },
   },
   {
-    id: '4',
+    id: 4,
     name: 'Igor Delgado',
     nickname: 'Xhan',
     img: player_4,
@@ -74,7 +74,7 @@ const PLAYERS: PlayerProps[] = [
     },
   },
   {
-    id: '5',
+    id: 5,
     name: 'Gabriel Tomilhero',
     nickname: 'Gazera',
     img: player_5,
@@ -89,7 +89,7 @@ const PLAYERS: PlayerProps[] = [
 ];
 
 type PlayerProps = {
-  id: string;
+  id: number;
   name: string;
   nickname: string;
   img: string;

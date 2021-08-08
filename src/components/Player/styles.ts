@@ -9,5 +9,15 @@ export const Container = styled.div<PlayerProps>`
   width: max(5vw, 2rem);
   height: max(5vw, 2rem);
   border-radius: 50%;
-  border: 2px solid ${({ theme: { colors } }) => colors.white};
+  border: 2px solid
+    ${({ colorMain, colorSecondary, theme: { colors } }) =>
+      colorMain
+        ? colors.main
+        : colorSecondary
+        ? colors.secondary
+        : colors.white};
+
+  @media (max-width: 600px) {
+    border-width: 1px;
+  }
 `;
