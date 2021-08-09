@@ -1,8 +1,28 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { fadeInUp, fadeOutUp } from '../../global/styles/global';
 
 type CallStyleProps = {
   isVisible?: boolean;
 };
+
+const onShow = css<CallStyleProps>`
+  display: flex;
+  flex-direction: column;
+  max-height: 50rem;
+  margin: 2rem 0 auto;
+  padding: 1rem;
+  border-radius: 5px;
+  color: ${({ theme: { colors } }) => colors.white};
+  background-color: ${({ theme: { colors } }) => colors.bgColor};
+  animation-name: ${fadeInUp};
+  animation-duration: 0.3s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+`;
+
+const onHide = css`
+  /* animation: ${fadeOutUp} 0.3s ease; */
+`;
 
 export const Container = styled.div<CallStyleProps>`
   display: flex;
@@ -11,27 +31,10 @@ export const Container = styled.div<CallStyleProps>`
   flex-direction: column;
   width: max(250px, 95%);
   margin: 0.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 5px;
   background-color: ${({ theme: { colors } }) => colors.black};
   color: ${({ theme: { colors } }) => colors.secondary};
-
-  .showCall-enter {
-    opacity: 0.1;
-    filter: blur(5px);
-  }
-  .showCall-enter-active {
-    opacity: 1;
-    filter: blur(0px);
-  }
-  .showCall-exit {
-    opacity: 0.1;
-    filter: blur(5px);
-  }
-  .showCall-exit-active {
-    opacity: 0;
-    filter: blur(10px);
-  }
 `;
 
 export const Title = styled.div<CallStyleProps>`
@@ -39,13 +42,12 @@ export const Title = styled.div<CallStyleProps>`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 0.5rem;
   cursor: pointer;
   transition: all 0.25s;
 
   &:hover {
-    svg {
-      color: ${({ theme: { colors } }) => colors.white};
-    }
+    color: ${({ theme: { colors } }) => colors.main};
   }
 
   h1 {
@@ -62,15 +64,11 @@ export const Title = styled.div<CallStyleProps>`
   }
 `;
 
-export const HiddenContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 2rem auto;
-  padding: 1rem;
-  color: ${({ theme: { colors } }) => colors.white};
-  border-radius: 5px;
-  transition: all 0.35s;
-  background-color: ${({ theme: { colors } }) => colors.bgColor};
+export const HiddenContainer = styled.div<CallStyleProps>`
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s;
+  ${({ isVisible }) => (isVisible ? onShow : onHide)};
 `;
 
 export const Description = styled.div`

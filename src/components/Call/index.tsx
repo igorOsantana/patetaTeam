@@ -42,7 +42,7 @@ export const Call: React.FC<CallProps> = ({
   const [showCall, setShowCall] = useState(false);
   const [heightCall, setHeightCall] = useState(0);
 
-  const handleToggleCall = () => setShowCall(prevState => !prevState);
+  const handleToggleCall = () => setShowCall((prevState) => !prevState);
 
   const handleHeight = (element: HTMLElement) => {
     const height = element.offsetHeight;
@@ -55,26 +55,18 @@ export const Call: React.FC<CallProps> = ({
         <h1>{title}</h1>
         <ArrowForwardIos />
       </Title>
-      <CSSTransition
-        in={showCall}
-        unmountOnExit
-        timeout={500}
-        classNames='showCall'
-        onEnter={handleHeight}
-      >
-        <HiddenContainer>
-          <Description>
-            <span>Description</span>
-            <p>{description}</p>
-          </Description>
-          {PLAYERS.map(PLAYER => (
-            <PlayerContent key={PLAYER.id}>
-              <Player colorSecondary image={PLAYER.img} />
-              <p>{players[PLAYER.id].shouldDo}</p>
-            </PlayerContent>
-          ))}
-        </HiddenContainer>
-      </CSSTransition>
+      <HiddenContainer isVisible={showCall}>
+        <Description>
+          <span>Description</span>
+          <p>{description}</p>
+        </Description>
+        {PLAYERS.map((PLAYER) => (
+          <PlayerContent key={PLAYER.id}>
+            <Player colorSecondary image={PLAYER.img} />
+            <p>{players[PLAYER.id].shouldDo}</p>
+          </PlayerContent>
+        ))}
+      </HiddenContainer>
     </Container>
   );
 };

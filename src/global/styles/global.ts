@@ -48,6 +48,14 @@ export const fadeInDown = keyframes`
   100%{ opacity: 1; transform: translateY(0vw); filter: blur(0px) }
 `;
 
+export const fadeOutUp = keyframes`
+  0%{ opacity: 1; transform: translateY(0vw); filter: blur(0px) }
+  25%{ opacity: 0.8; transform: translateY(-2vw); filter: blur(2px) }
+  50%{ opacity: 0.5; transform: translateY(-5vw); filter: blur(4px) }
+  75%{ opacity: 0.3; transform: translateY(-7vw); filter: blur(8px) }
+  100%{ opacity: 0; transform: translateY(10vw); filter: blur(10px) }
+`;
+
 export const shake = keyframes`
   0%{ transform: translateX(-10px); }
   25%{ transform: translateX(10px); }
