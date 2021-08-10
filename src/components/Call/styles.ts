@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { fadeInUp, fadeOutUp } from '../../global/styles/global';
+import { fadeInUp } from '../../global/styles/global';
 
 type CallStyleProps = {
   isVisible?: boolean;
@@ -18,10 +18,6 @@ const onShow = css<CallStyleProps>`
   animation-duration: 0.3s;
   animation-delay: 0.3s;
   animation-fill-mode: forwards;
-`;
-
-const onHide = css`
-  /* animation: ${fadeOutUp} 0.3s ease; */
 `;
 
 export const Container = styled.div<CallStyleProps>`
@@ -47,7 +43,7 @@ export const Title = styled.div<CallStyleProps>`
   transition: all 0.25s;
 
   &:hover {
-    color: ${({ theme: { colors } }) => colors.main};
+    color: red;
   }
 
   h1 {
@@ -65,35 +61,70 @@ export const Title = styled.div<CallStyleProps>`
 `;
 
 export const HiddenContainer = styled.div<CallStyleProps>`
+  position: relative;
   opacity: 0;
   max-height: 0;
+  width: 100%;
+  overflow: hidden;
   transition: all 0.3s;
-  ${({ isVisible }) => (isVisible ? onShow : onHide)};
+  ${({ isVisible }) => (isVisible ? onShow : null)};
+
+  > svg {
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      color: red;
+    }
+    &:active {
+      transform: translateY(5px);
+    }
+  }
 `;
 
 export const Description = styled.div`
   text-align: left;
-  margin-bottom: 1rem;
   flex: 2;
 
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   span {
-    color: ${({ theme: { colors } }) => colors.main};
+    color: red;
     font-size: min(1.75rem, 4vw);
     text-transform: uppercase;
   }
   p {
-    margin: 10px 20px;
+    margin: 0 10px 20px;
     font-size: min(1.5rem, 3vw);
     color: ${({ theme: { colors } }) => colors.white};
   }
 `;
 
+export const Grenades = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+
+  span {
+    font-size: 0.75rem;
+  }
+`;
+
 export const PlayerContent = styled.div`
+  flex: 1;
   display: flex;
   align-items: center;
   text-align: left;
   margin: 0.5rem 3rem;
-  flex: 1;
 
   p {
     flex: 1;

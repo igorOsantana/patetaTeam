@@ -13,25 +13,25 @@ const CALLS = [
         1: {
           shouldDo:
             'Joga smoke no CT, molotova rampa e faz a flash da entrada e mais uma atrasada.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         2: {
           shouldDo:
             'Flash tabelada varanda para dominar, smoke na mureta da entrada da varanda e flash para entrada.',
-          grenades: { he: 0, flashbang: 2, motolov: 0, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 0, smoke: 1 },
         },
         3: {
           shouldDo: 'Domina escuro baixo, molotova varanda, finge exec meio B.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         4: {
           shouldDo: 'Smoke caixa gorda e lurkeia fundo guardando granadas.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         5: {
           shouldDo:
             'Flash em cima do escuro baixo, flash inicio da varanda, molotov bomb A e faz o entry.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 0 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 0 },
         },
       },
     },
@@ -47,25 +47,25 @@ const CALLS = [
         1: {
           shouldDo:
             'Joga smoke no CT, molotova rampa e faz a flash da entrada e mais uma atrasada.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         2: {
           shouldDo:
             'Flash tabelada varanda para dominar, smoke na mureta da entrada da varanda e flash para entrada.',
-          grenades: { he: 0, flashbang: 2, motolov: 0, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 0, smoke: 1 },
         },
         3: {
           shouldDo: 'Domina escuro baixo, molotova varanda, finge exec meio B.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         4: {
           shouldDo: 'Smoke caixa gorda e lurkeia fundo guardando granadas.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         5: {
           shouldDo:
             'Flash em cima do escuro baixo, flash inicio da varanda, molotov bomb A e faz o entry.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 0 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 0 },
         },
       },
     },
@@ -81,25 +81,25 @@ const CALLS = [
         1: {
           shouldDo:
             'Joga smoke no CT, molotova rampa e faz a flash da entrada e mais uma atrasada.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         2: {
           shouldDo:
             'Flash tabelada varanda para dominar, smoke na mureta da entrada da varanda e flash para entrada.',
-          grenades: { he: 0, flashbang: 2, motolov: 0, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 0, smoke: 1 },
         },
         3: {
           shouldDo: 'Domina escuro baixo, molotova varanda, finge exec meio B.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         4: {
           shouldDo: 'Smoke caixa gorda e lurkeia fundo guardando granadas.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         5: {
           shouldDo:
             'Flash em cima do escuro baixo, flash inicio da varanda, molotov bomb A e faz o entry.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 0 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 0 },
         },
       },
     },
@@ -115,25 +115,25 @@ const CALLS = [
         1: {
           shouldDo:
             'Joga smoke no CT, molotova rampa e faz a flash da entrada e mais uma atrasada.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         2: {
           shouldDo:
             'Flash tabelada varanda para dominar, smoke na mureta da entrada da varanda e flash para entrada.',
-          grenades: { he: 0, flashbang: 2, motolov: 0, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 0, smoke: 1 },
         },
         3: {
           shouldDo: 'Domina escuro baixo, molotova varanda, finge exec meio B.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         4: {
           shouldDo: 'Smoke caixa gorda e lurkeia fundo guardando granadas.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         5: {
           shouldDo:
             'Flash em cima do escuro baixo, flash inicio da varanda, molotov bomb A e faz o entry.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 0 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 0 },
         },
       },
     },
@@ -148,25 +148,25 @@ const CALLS = [
       players: {
         1: {
           shouldDo: 'Smoke arco direito do L, 2 flash para entrada.',
-          grenades: { he: 0, flashbang: 2, motolov: 0, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 0, smoke: 1 },
         },
         2: {
           shouldDo:
             'Smoke arco esquerdo do L, 2 flash atrasadas para entrada. ',
-          grenades: { he: 0, flashbang: 2, motolov: 0, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 0, smoke: 1 },
         },
         3: {
           shouldDo:
             'Molotova sombra, uma flash janela e usa smoke para after plant.',
-          grenades: { he: 0, flashbang: 1, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 1, molotov: 1, smoke: 1 },
         },
         4: {
           shouldDo: 'Segundo entry, smoke na mão para apagar molotov.',
-          grenades: { he: 0, flashbang: 0, motolov: 0, smoke: 1 },
+          grenades: { he: 0, flashbang: 0, molotov: 0, smoke: 1 },
         },
         5: {
           shouldDo: 'Primeiro entry, molotova van, flash janela e pula janela.',
-          grenades: { he: 0, flashbang: 1, motolov: 1, smoke: 0 },
+          grenades: { he: 0, flashbang: 1, molotov: 1, smoke: 0 },
         },
       },
     },
@@ -182,27 +182,27 @@ const CALLS = [
         1: {
           shouldDo:
             'Flash rua para dominio, combinar HE combada. Na exec faz smoke banco e flash para entrada.',
-          grenades: { he: 1, flashbang: 1, motolov: 1, smoke: 1 },
+          grenades: { he: 1, flashbang: 1, molotov: 1, smoke: 1 },
         },
         2: {
           shouldDo:
             'Flash fundo e rua para dominio, molotov banheiro. Guarda smoke after plant',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         3: {
           shouldDo:
             'Molotov escada liga, 1 flash para dominio esgoto. Na exec smoke lixeira e flash para entrada.',
-          grenades: { he: 0, flashbang: 2, motolov: 1, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 1, smoke: 1 },
         },
         4: {
           shouldDo:
             'Holda sapão, flash esgoto para dominio. Antes da exec, faz qualquer smoke na B.',
-          grenades: { he: 0, flashbang: 2, motolov: 0, smoke: 1 },
+          grenades: { he: 0, flashbang: 2, molotov: 0, smoke: 1 },
         },
         5: {
           shouldDo:
             'Smoke porta banheiro, HE parquinho, flash rua e faz o entry.',
-          grenades: { he: 1, flashbang: 1, motolov: 0, smoke: 1 },
+          grenades: { he: 1, flashbang: 1, molotov: 0, smoke: 1 },
         },
       },
     },
