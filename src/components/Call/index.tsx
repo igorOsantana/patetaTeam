@@ -52,7 +52,7 @@ export const Call: React.FC<CallProps> = ({
 
   const handleToggleCall = () => setShowCall(prevState => !prevState);
 
-  const getGrenadesNum = useCallback(() => {
+  const getAllGrenades = useCallback(() => {
     let flashbang = 0;
     let smoke = 0;
     let he = 0;
@@ -77,11 +77,9 @@ export const Call: React.FC<CallProps> = ({
     });
   }, [players]);
 
-  console.log(grenades);
-
   useEffect(() => {
-    getGrenadesNum();
-  }, [getGrenadesNum]);
+    getAllGrenades();
+  }, [getAllGrenades]);
 
   return (
     <Container>
